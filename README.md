@@ -4,7 +4,7 @@
 
 -👨🏾‍🎓 2º Semestre de Analise e Desenvolvimento de Sistemas...⟳
 
--📚 Estudando Javascript, C# e Java.
+-📚 Estudando Javascript e C#...
 
 -👩🏾‍💻 Desenvolvendo Projetos Webs...
 
