@@ -2,9 +2,9 @@
 
 ## Oiii eu sou o Vinicius Ferreira Lima!!
 
--👨🏾‍🎓 Cursando Analise e Desenvolvimento de Sistemas.
+-👨🏾‍🎓 2º Semestre de Analise e Desenvolvimento de Sistemas...⟳
 
--📚 Estudando JavaScript, C# e Java.
+-📚 Estudando Javascript, C# e Java.
 
 -👩🏾‍💻 Desenvolvendo Projetos Webs...
 
