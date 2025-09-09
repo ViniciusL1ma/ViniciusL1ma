@@ -1,4 +1,4 @@
-# ViniciusLima
+# Vinicius Lima
 
 ## Oiii eu sou o Vinicius Ferreira Lima!!
 
