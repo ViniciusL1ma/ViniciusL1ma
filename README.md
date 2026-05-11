@@ -9,7 +9,7 @@
 -👩🏾‍💻 Desenvolvendo Projetos Webs...
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=js,react,html,css,cs" />
+  <img src="https://skillicons.dev/icons?i=js,react,html,css" />
 </p>
 
 
