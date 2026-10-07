@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto na Hora — Arquitetura &amp; Interiores</title>
+  <meta name="description" content="Projetos de arquitetura e interiores residenciais e corporativos, com prazo definido e entrega no tempo combinado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <a href="index.html" class="logo">Projeto na Hora<span>.</span></a>
+      <button class="menu-btn" aria-expanded="false">Menu</button>
+      <nav class="nav">
+        <a href="#projetos" aria-current="page">Projetos</a>
+        <a href="#estudio">Estúdio</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="page-head">
+      <h1 class="reveal">Espaços bem pensados, entregues na hora.</h1>
+      <p class="reveal">Somos um estúdio de arquitetura e interiores. Desenhamos casas, escritórios e lojas com método, prazo claro e atenção a cada detalhe.</p>
+    </section>
+
+    <section id="projetos">
+      <div class="filters">
+        <button class="is-active" data-filter="todos">Todos</button>
+        <button data-filter="corporativo">Corporativo</button>
+        <button data-filter="residencial">Residencial</button>
+        <button data-filter="comercial">Comercial</button>
+      </div>
+
+      <div class="projects">
+        <a class="card reveal" href="projeto.html" data-cat="corporativo">
+          <div class="ph t3"></div>
+          <div class="card-meta"><h3>Escritório Vila Madalena</h3><small>Corporativo · 2026</small></div>
+        </a>
+        <a class="card reveal" href="projeto.html" data-cat="residencial">
+          <div class="ph t2"></div>
+          <div class="card-meta"><h3>Apartamento Pinheiros</h3><small>Residencial · 2026</small></div>
+        </a>
+        <a class="card reveal" href="projeto.html" data-cat="comercial">
+          <div class="ph t5"></div>
+          <div class="card-meta"><h3>Café Aurora</h3><small>Comercial · 2025</small></div>
+        </a>
+        <a class="card reveal" href="projeto.html" data-cat="residencial">
+          <div class="ph t1"></div>
+          <div class="card-meta"><h3>Casa Serra</h3><small>Residencial · 2025</small></div>
+        </a>
+        <a class="card reveal" href="projeto.html" data-cat="corporativo">
+          <div class="ph t6"></div>
+          <div class="card-meta"><h3>Sede Tecnologia</h3><small>Corporativo · 2025</small></div>
+        </a>
+        <a class="card reveal" href="projeto.html" data-cat="comercial">
+          <div class="ph t4"></div>
+          <div class="card-meta"><h3>Loja Atelier</h3><small>Comercial · 2024</small></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="estudio" class="intro">
+      <p class="eyebrow reveal" style="color:var(--muted)">O estúdio</p>
+      <div class="reveal">
+        <p class="lead">Acreditamos que um bom projeto respeita o tempo de quem vai viver nele — por isso cada etapa tem data, entrega e responsável.</p>
+        <div class="body-text">
+          <p>A Projeto na Hora nasceu para tornar o processo de reforma e decoração mais simples e previsível. Unimos criatividade e organização para transformar ideias em ambientes funcionais e cheios de personalidade.</p>
+          <p>Trabalhamos com uma rede de fornecedores e parceiros de confiança, acompanhando a obra do primeiro esboço até a última peça no lugar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="intro" style="padding-top:0">
+      <p class="eyebrow reveal" style="color:var(--muted)">Serviços</p>
+      <dl class="facts reveal">
+        <div><dt>01</dt><dd>Projeto de interiores residencial</dd></div>
+        <div><dt>02</dt><dd>Projeto corporativo e comercial</dd></div>
+        <div><dt>03</dt><dd>Layout, marcenaria e iluminação</dd></div>
+        <div><dt>04</dt><dd>Consultoria e projeto online</dd></div>
+        <div><dt>05</dt><dd>Acompanhamento de obra</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <div class="wrap">
+      <p class="footer-cta">Tem um espaço para transformar? <a href="mailto:contato@projetonahora.com.br">Vamos conversar.</a></p>
+      <div class="footer-grid">
+        <div><h4>Contato</h4><p><a href="mailto:contato@projetonahora.com.br">contato@projetonahora.com.br</a><br><a href="https://wa.me/5500000000000">(00) 00000-0000</a></p></div>
+        <div><h4>Endereço</h4><p>Rua Exemplo, 123<br>Cidade — UF</p></div>
+        <div><h4>Redes</h4><p><a href="#">Instagram</a><br><a href="#">LinkedIn</a><br><a href="#">Pinterest</a></p></div>
+        <div><h4>Estúdio</h4><p><a href="#projetos">Projetos</a><br><a href="#estudio">Sobre nós</a><br><a href="#servicos">Serviços</a></p></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Projeto na Hora</span><span>Arquitetura &amp; Interiores</span></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

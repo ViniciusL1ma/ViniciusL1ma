@@ -1,0 +1,218 @@
+/* Projeto na Hora — identidade visual
+   Paleta terrosa, tipografia editorial, muito respiro. */
+
+:root {
+  --bg: #f4f1ec;
+  --surface: #ebe6de;
+  --ink: #1d1b18;
+  --muted: #6f6a62;
+  --line: #d6d0c5;
+  --accent: #b5562f; /* terracota */
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1440px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- Header ---------- */
+.header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  transition: background .4s, color .4s, transform .4s;
+}
+.header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 76px;
+}
+.header.is-solid { background: var(--bg); border-bottom: 1px solid var(--line); }
+.header.is-hidden { transform: translateY(-100%); }
+.header.on-dark:not(.is-solid) { color: #fff; }
+
+.logo {
+  font-family: var(--serif); font-size: 26px; font-weight: 500;
+  letter-spacing: -.01em; line-height: 1;
+}
+.logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 36px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.nav a { position: relative; padding: 4px 0; }
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .35s;
+}
+.nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
+
+.menu-btn { display: none; background: none; border: 0; color: inherit; font: inherit;
+  font-size: 13px; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+
+/* ---------- Placeholders de imagem ---------- */
+/* Troque cada .ph por <img src="assets/..."> quando tiver as fotos. */
+.ph {
+  position: relative; overflow: hidden; background: var(--surface);
+}
+.ph::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--tone, linear-gradient(135deg, #d9cfc1, #b9ab98));
+}
+.ph::after {
+  content: attr(data-label); position: absolute; left: 16px; bottom: 14px;
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(29,27,24,.55);
+}
+.ph img { position: relative; z-index: 1; }
+.t1 { --tone: linear-gradient(160deg, #cfc3b2 0%, #a89580 100%); }
+.t2 { --tone: linear-gradient(200deg, #e2d8ca 0%, #c4b39d 100%); }
+.t3 { --tone: linear-gradient(140deg, #b8a48c 0%, #7d6a55 100%); }
+.t4 { --tone: linear-gradient(180deg, #d8d2c6 0%, #a7a294 100%); }
+.t5 { --tone: linear-gradient(120deg, #c9a58a 0%, #a1694a 100%); }
+.t6 { --tone: linear-gradient(170deg, #8f8a7c 0%, #5b574d 100%); }
+
+/* ---------- Hero do projeto ---------- */
+.hero { position: relative; height: 100svh; min-height: 560px; color: #fff; }
+.hero .ph { position: absolute; inset: 0; }
+.hero .ph::after { display: none; }
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 55%);
+}
+.hero-inner {
+  position: absolute; inset: auto 0 0 0; z-index: 2; padding-bottom: clamp(32px, 6vw, 72px);
+}
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
+.hero h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(44px, 9vw, 132px); line-height: .95; letter-spacing: -.02em; margin-top: 14px;
+}
+.scroll-hint {
+  position: absolute; right: var(--gutter); bottom: clamp(32px, 6vw, 72px); z-index: 2;
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* ---------- Intro + ficha técnica ---------- */
+.intro {
+  display: grid; grid-template-columns: 1fr 2fr; gap: clamp(32px, 6vw, 120px);
+  padding: clamp(72px, 10vw, 160px) 0;
+}
+.facts { border-top: 1px solid var(--ink); }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.facts dt { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 11px; padding-top: 2px; }
+.facts dd { text-align: right; }
+
+.lead {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 44px); line-height: 1.2; letter-spacing: -.01em;
+}
+.body-text { columns: 2; column-gap: 40px; margin-top: 40px; color: #3b3832; max-width: 900px; }
+.body-text p + p { margin-top: 1em; }
+
+/* ---------- Galeria ---------- */
+.gallery { display: grid; gap: clamp(12px, 1.6vw, 24px); padding-bottom: clamp(48px, 6vw, 96px); }
+.row { display: grid; gap: inherit; }
+.row.full .ph { aspect-ratio: 16 / 9; }
+.row.two { grid-template-columns: 1fr 1fr; }
+.row.two .ph { aspect-ratio: 4 / 5; }
+.row.offset { grid-template-columns: 5fr 7fr; align-items: end; }
+.row.offset .ph:first-child { aspect-ratio: 3 / 4; }
+.row.offset .ph:last-child { aspect-ratio: 4 / 3; }
+.row.narrow { grid-template-columns: 1fr 2fr 1fr; }
+.row.narrow .ph { grid-column: 2; aspect-ratio: 4 / 5; }
+
+.quote {
+  padding: clamp(64px, 9vw, 140px) 0; text-align: center;
+}
+.quote blockquote {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(28px, 4vw, 56px); line-height: 1.15; max-width: 22ch; margin: 0 auto;
+}
+.quote cite { display: block; margin-top: 24px; font-style: normal; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Próximo projeto ---------- */
+.next { border-top: 1px solid var(--line); }
+.next a { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; padding: clamp(48px, 7vw, 110px) 0; }
+.next h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 7vw, 104px); line-height: 1; letter-spacing: -.02em; transition: color .3s; }
+.next a:hover h2 { color: var(--accent); }
+.next .arrow { font-size: clamp(32px, 4vw, 56px); transition: transform .3s; }
+.next a:hover .arrow { transform: translateX(10px); }
+
+/* ---------- Home: lista de projetos ---------- */
+.page-head { padding: clamp(140px, 18vw, 240px) 0 clamp(48px, 6vw, 96px); }
+.page-head h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 8vw, 120px); line-height: .95; letter-spacing: -.02em; max-width: 14ch; }
+.page-head p { margin-top: 28px; max-width: 46ch; color: var(--muted); font-size: 16px; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-bottom: 32px; border-bottom: 1px solid var(--line); margin-bottom: 40px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.filters button { background: none; border: 0; font: inherit; color: var(--muted); cursor: pointer; letter-spacing: inherit; text-transform: inherit; }
+.filters button.is-active, .filters button:hover { color: var(--ink); }
+
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 80px) clamp(16px, 2vw, 32px); padding-bottom: clamp(72px, 10vw, 160px); }
+.card .ph { aspect-ratio: 4 / 3; }
+.card:nth-child(4n+2) .ph, .card:nth-child(4n+3) .ph { aspect-ratio: 4 / 5; }
+.card .ph::before { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.card:hover .ph::before { transform: scale(1.04); }
+.card-meta { display: flex; justify-content: space-between; gap: 16px; margin-top: 16px; }
+.card-meta > * { min-width: 0; }
+.card h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.1; }
+.card small { color: var(--muted); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; padding-top: 6px; }
+.card[hidden] { display: none; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--ink); color: #e9e4dc; padding: clamp(64px, 8vw, 120px) 0 32px; }
+.footer-cta { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 6vw, 88px); line-height: 1; letter-spacing: -.02em; max-width: 16ch; }
+.footer-cta a { color: var(--accent); border-bottom: 1px solid currentColor; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: clamp(56px, 7vw, 110px); font-size: 14px; }
+.footer-grid h4 { font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #8f897f; margin-bottom: 12px; }
+.footer-grid a:hover { color: #fff; text-decoration: underline; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 16px; margin-top: 64px; padding-top: 24px; border-top: 1px solid #3a3731; font-size: 12px; color: #8f897f; }
+
+/* ---------- Animação de entrada ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .intro { grid-template-columns: 1fr; }
+  .facts { order: 2; }
+  .body-text { columns: 1; }
+  .row.two, .row.offset { grid-template-columns: 1fr; }
+  .row.narrow { grid-template-columns: 1fr; }
+  .row.narrow .ph { grid-column: 1; }
+  .projects { grid-template-columns: minmax(0, 1fr); }
+  .card-meta { flex-direction: column; gap: 4px; }
+  .card small { padding-top: 0; }
+  .card .ph, .card:nth-child(4n+2) .ph, .card:nth-child(4n+3) .ph { aspect-ratio: 4 / 3; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+
+  .menu-btn { display: block; }
+  .nav {
+    position: fixed; inset: 76px 0 auto 0; flex-direction: column; gap: 0;
+    background: var(--bg); color: var(--ink); border-bottom: 1px solid var(--line);
+    padding: 8px var(--gutter) 24px; display: none;
+  }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .nav a::after { display: none; }
+  .header.menu-open .nav { display: flex; }
+  .header.menu-open { background: var(--bg); color: var(--ink); }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; }
+}
