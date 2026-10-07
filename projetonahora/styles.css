@@ -180,10 +180,12 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; margin-top: 64px; padding-top: 24px; border-top: 1px solid #3a3731; font-size: 12px; color: #8f897f; }
 
 /* ---------- Animação de entrada ---------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
-.reveal.is-in { opacity: 1; transform: none; }
+.reveal { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
+.reveal:nth-child(2) { animation-delay: .12s; }
+.reveal:nth-child(3) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { animation: none; }
   html { scroll-behavior: auto; }
 }
 
